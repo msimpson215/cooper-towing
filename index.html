@@ -12,35 +12,94 @@
   <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
-  <a class="skip-link" href="#below-hero">Skip to quick links</a>
+  <a class="skip-link" href="#below-hero">Skip to help links</a>
 
   <main id="main">
-    <h1 class="sr-only">Cooper's Automotive and Towing — 24/7 towing Metro East and St. Louis.</h1>
+    <h1 class="sr-only">Cooper's Automotive and Towing — 24/7 emergency towing. Call 618-671-8770.</h1>
 
-    <!-- Your design image — nav & buttons are taps on the photo (no HTML nav on top) -->
-    <section class="home-hero" aria-label="Cooper's Automotive and Towing">
+    <!-- LAPTOP: full design image, taps on photo nav -->
+    <section class="home-hero desktop-only" aria-label="Cooper's Automotive and Towing">
       <div class="home-hero-wrap">
-        <img
-          class="home-hero-img"
-          src="images/hero.png"
-          width="1024"
-          height="682"
-          alt="Cooper's Automotive and Towing — Stranded? We're on the way. Call 618-671-8770."
-        >
+        <img class="home-hero-img" src="images/hero.png" width="1024" height="682" alt="Cooper's Automotive and Towing">
         <a href="/" class="design-hit hit-logo" aria-label="Home"> </a>
         <a href="/" class="design-hit hit-home" aria-label="Home"> </a>
-        <a href="/towing/" class="design-hit hit-towing" aria-label="Towing services"> </a>
-        <a href="/automotive/" class="design-hit hit-automotive" aria-label="Automotive services"> </a>
+        <a href="/towing/" class="design-hit hit-towing" aria-label="Towing"> </a>
+        <a href="/automotive/" class="design-hit hit-automotive" aria-label="Automotive"> </a>
         <a href="/about.html" class="design-hit hit-about" aria-label="About"> </a>
         <a href="/contact.html" class="design-hit hit-contact" aria-label="Contact"> </a>
-        <a href="tel:6186718770" class="design-hit hit-header-phone" aria-label="Call 618-671-8770"> </a>
+        <a href="tel:6186718770" class="design-hit hit-header-phone" aria-label="Call"> </a>
         <a href="tel:6186718770" class="design-hit hit-call-btn" aria-label="Call now"> </a>
         <button type="button" class="design-hit hit-request" data-open-modal="service" aria-label="Request service"> </button>
-        <a href="tel:6186718770" class="design-hit hit-footer-phone" aria-label="Call 618-671-8770"> </a>
+        <a href="tel:6186718770" class="design-hit hit-footer-phone" aria-label="Call"> </a>
       </div>
     </section>
 
-    <!-- Extra room below hero — no stretch, no duplicate headline -->
+    <!-- PHONE: big call button, hamburger, truck photo (cropped — no tiny yellow bar) -->
+    <div class="mobile-home mobile-only">
+      <header class="mobile-top">
+        <div class="mobile-top-row">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="sr-only">Menu</span>
+          </button>
+          <a href="/" class="mobile-brand">
+            <span class="logo-name">Cooper's</span>
+            <span class="logo-tagline">AUTOMOTIVE &amp; TOWING</span>
+          </a>
+        </div>
+        <a href="tel:6186718770" class="mobile-call-now">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          CALL NOW · 24/7 EMERGENCY · 618-671-8770
+        </a>
+        <nav id="mobile-nav" class="mobile-nav" aria-label="Main">
+          <ul class="nav-list">
+            <li><a href="/" class="nav-link active">HOME</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-link nav-dropdown-btn" aria-expanded="false">TOWING</button>
+              <ul class="dropdown">
+                <li><a href="/towing/">All Towing</a></li>
+                <li><a href="/towing/emergency.html">Emergency 24/7</a></li>
+                <li><a href="/towing/flatbed.html">Flatbed</a></li>
+                <li><a href="/towing/roadside.html">Roadside</a></li>
+                <li><a href="/towing/accident-recovery.html">Accident Recovery</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-link nav-dropdown-btn" aria-expanded="false">AUTOMOTIVE</button>
+              <ul class="dropdown">
+                <li><a href="/automotive/">All Automotive</a></li>
+                <li><a href="/automotive/repairs.html">Repairs</a></li>
+                <li><a href="/automotive/diagnostics.html">Diagnostics</a></li>
+                <li><a href="/automotive/brakes.html">Brakes</a></li>
+                <li><a href="/automotive/maintenance.html">Maintenance</a></li>
+              </ul>
+            </li>
+            <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+            <li><a href="/contact.html" class="nav-link">CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="mobile-hero">
+        <!-- Truck photo only — bottom of mockup (yellow/cities) cropped off -->
+        <div class="mobile-hero-photo-wrap">
+          <img class="mobile-hero-photo" src="images/hero.png" alt="">
+        </div>
+        <div class="mobile-hero-copy">
+          <p class="mobile-kicker">24/7 EMERGENCY · ON-CALL SERVICE</p>
+          <p class="mobile-headline white">STRANDED?</p>
+          <p class="mobile-headline yellow">WE'RE ON THE WAY.</p>
+          <p class="mobile-sub">Fast towing &amp; roadside help — Metro East &amp; St. Louis.</p>
+          <div class="mobile-hero-btns">
+            <a href="tel:6186718770" class="btn btn-call btn-large">CALL 618-671-8770</a>
+            <button type="button" class="btn btn-service btn-large" data-open-modal="service">REQUEST SERVICE</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <section id="below-hero" class="below-hero">
       <div class="below-hero-inner">
         <h2 class="below-hero-title">How can we help?</h2>
@@ -50,11 +109,11 @@
           <a href="/automotive/repairs.html" class="quick-link">Auto Repair</a>
           <a href="/contact.html" class="quick-link">Contact Us</a>
         </div>
-        <div class="below-hero-actions">
-          <a href="tel:6186718770" class="btn btn-call">CALL 618-671-8770</a>
-          <button type="button" class="btn btn-service" data-open-modal="service">REQUEST SERVICE</button>
-        </div>
-        <p class="below-hero-note">Serving Metro East &amp; Greater St. Louis · 24 hours a day</p>
+        <p class="below-hero-cities">
+          Belleville · Fairview Heights · Collinsville · O'Fallon · East St. Louis ·
+          St. Louis &amp; surrounding areas
+        </p>
+        <p class="below-hero-note">One call. We'll take care of the rest.</p>
       </div>
     </section>
 
@@ -91,6 +150,7 @@
     </div>
   </div>
 
+  <script src="js/nav.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

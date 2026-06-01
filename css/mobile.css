@@ -1,32 +1,241 @@
-/* Phone tweaks only — hero stays natural height (no stretch) */
+/* Desktop vs phone */
+.desktop-only {
+  display: block;
+}
 
+.mobile-only {
+  display: none;
+}
+
+/* —— PHONE (broke down on roadside — big text, big call button) —— */
 @media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  body {
+    background: var(--black);
+  }
+
+  /* Sticky top: menu + brand + giant call */
+  .mobile-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 3px solid var(--yellow);
+  }
+
+  .mobile-top-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem 0.5rem;
+  }
+
+  .mobile-top .nav-toggle {
+    display: flex;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+  }
+
+  .mobile-brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mobile-brand .logo-name {
+    display: block;
+    font-family: var(--script);
+    font-size: 1.6rem;
+    color: var(--yellow);
+    line-height: 1.1;
+  }
+
+  .mobile-brand .logo-tagline {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--white);
+  }
+
+  .mobile-call-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--red);
+    color: var(--white);
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    padding: 0.95rem 0.75rem;
+    text-align: center;
+    line-height: 1.25;
+    border-top: 2px solid #9a181c;
+  }
+
+  .mobile-call-now svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav {
+    display: none;
+    background: #111;
+    border-top: 1px solid #333;
+  }
+
+  .mobile-nav.open {
+    display: block;
+  }
+
+  .mobile-nav .nav-list {
+    flex-direction: column;
+    padding: 0.25rem 0;
+    gap: 0;
+  }
+
+  .mobile-nav .nav-list > li {
+    border-bottom: 1px solid #222;
+  }
+
+  .mobile-nav .nav-link,
+  .mobile-nav .nav-dropdown-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .mobile-nav .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    background: #0a0a0a;
+    border: none;
+  }
+
+  .mobile-nav .has-dropdown.open .dropdown {
+    display: block;
+  }
+
+  .mobile-nav .dropdown a {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* Truck photo — cropped top of mockup (no yellow cities bar) */
+  .mobile-hero-photo-wrap {
+    overflow: hidden;
+    height: clamp(200px, 38vw, 320px);
+    background: #111;
+  }
+
+  .mobile-hero-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center 18%;
+    transform: scale(1.35);
+    transform-origin: center 22%;
+    filter: brightness(1.08);
+  }
+
+  .mobile-hero-copy {
+    padding: 1.25rem 1rem 1.5rem;
+    background: var(--black);
+  }
+
+  .mobile-kicker {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--yellow);
+    text-transform: uppercase;
+  }
+
+  .mobile-headline {
+    margin: 0;
+    font-size: clamp(2rem, 10vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-headline.white {
+    color: var(--white);
+  }
+
+  .mobile-headline.yellow {
+    color: var(--yellow);
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-sub {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ddd;
+    line-height: 1.4;
+  }
+
+  .mobile-hero-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .btn-large {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  /* Below hero */
   .below-hero {
     padding: 1.25rem 1rem 1.5rem;
   }
 
-  .below-hero-actions .btn {
-    width: 100%;
-    justify-content: center;
+  .below-hero-actions {
+    display: none;
   }
 
-  .hit-call-btn {
-    top: 52%;
-    left: 2%;
-    width: 46%;
-    height: 10%;
+  .below-hero-cities {
+    margin: 1rem 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #bbb;
+    line-height: 1.5;
   }
 
-  .hit-request {
-    top: 52%;
-    left: 50%;
-    width: 48%;
-    height: 10%;
+  .quick-link {
+    font-size: 0.9rem;
+    padding: 1rem 0.5rem;
   }
 
-  .hit-footer-phone {
-    bottom: 1%;
-    width: 100%;
-    height: 11%;
+  .below-hero-title {
+    font-size: 1.1rem;
   }
 }
+
+/* When you add a clean photo-only file, swap mobile background:
+   .mobile-hero-photo { content: url(../images/hero-clean.png); transform: none; }
+*/
