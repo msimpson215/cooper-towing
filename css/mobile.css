@@ -139,22 +139,21 @@
     font-size: 0.95rem;
   }
 
-  /* Truck photo — cropped top of mockup (no yellow cities bar) */
+  /* Truck photo — zoomed on truck; crops nav/yellow/footer from clean art */
   .mobile-hero-photo-wrap {
     overflow: hidden;
-    height: clamp(200px, 38vw, 320px);
+    height: clamp(220px, 52vw, 360px);
     background: #111;
   }
 
   .mobile-hero-photo {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center 18%;
-    transform: scale(1.35);
-    transform-origin: center 22%;
-    filter: brightness(1.08);
+    /* Focus on truck — may crop people at left; nav/yellow bars stay out of frame */
+    object-position: 62% 42%;
+    filter: brightness(1.06);
   }
 
   .mobile-hero-copy {
@@ -236,6 +235,4 @@
   }
 }
 
-/* When you add a clean photo-only file, swap mobile background:
-   .mobile-hero-photo { content: url(../images/hero-clean.png); transform: none; }
-*/
+/* Pure truck photo only (no baked UI): save as images/hero-truck.png and swap src above */
