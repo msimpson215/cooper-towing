@@ -236,78 +236,55 @@ a {
   margin: 5px 0;
 }
 
-/* Hero */
-.hero {
-  position: relative;
-  min-height: min(85vh, 720px);
-  display: flex;
-  align-items: center;
+/* Full design mockup — your picture, brightened; no HTML text on top */
+.design-panel {
+  background: var(--black);
+  line-height: 0;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../images/hero.png") center 35% / cover no-repeat;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.55) 45%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
-}
-
-.hero-content {
+.design-panel-frame {
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 3rem 1.25rem 4rem;
+}
+
+.design-image {
   width: 100%;
-}
-
-.hero h1 {
-  margin: 0 0 1rem;
-  line-height: 1.05;
-}
-
-.hero-line {
+  height: auto;
   display: block;
-  font-size: clamp(2.25rem, 6vw, 4.25rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  filter: brightness(1.12) contrast(1.04) saturate(1.06);
 }
 
-.hero-line-white {
-  color: var(--white);
+.design-hit {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
 }
 
-.hero-line-yellow {
-  color: var(--yellow);
+.design-hit:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
 }
 
-.hero-sub {
-  max-width: 520px;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-}
+/* Click zones aligned to hero.png (1024×682) */
+.design-hit-header-phone { top: 3%; right: 2%; width: 26%; height: 9%; }
+.design-hit-about { top: 4%; left: 52%; width: 8%; height: 7%; }
+.design-hit-contact { top: 4%; left: 60%; width: 10%; height: 7%; }
+.design-hit-call-btn { top: 52%; left: 3%; width: 30%; height: 11%; }
+.design-hit-request { top: 52%; left: 34%; width: 34%; height: 11%; }
+.design-hit-footer-phone { bottom: 2%; left: 1%; width: 38%; height: 14%; }
 
-.hero-tag {
-  color: var(--yellow);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin: 0 0 1.75rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.footer-copy {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #888;
+  padding: 1rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .btn {
@@ -616,13 +593,6 @@ a {
   margin-top: 0.25rem !important;
 }
 
-.footer-copy {
-  text-align: center;
-  font-size: 0.7rem;
-  opacity: 0.85;
-  margin: 0;
-  padding: 0.5rem 1rem 1rem;
-}
 
 /* Modal */
 .modal[hidden] {
