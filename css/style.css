@@ -237,79 +237,23 @@ a {
   margin: 5px 0;
 }
 
-/* Full design mockup — your picture, brightened; no HTML text on top */
-.design-panel {
+/* Home hero — your design image, natural size; taps on nav/buttons in the photo */
+.home-hero {
   background: var(--black);
   line-height: 0;
 }
 
-.design-panel-frame {
+.home-hero-wrap {
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.design-image-wrap {
-  position: relative;
-  line-height: 0;
-}
-
-/* Real nav + dropdowns — desktop: overlays mockup header; mobile: stacks above image */
-.design-nav-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  background: var(--black);
-  border-bottom: 2px solid #222;
-}
-
-.design-nav-overlay .header-inner {
-  padding: 0.5rem 1rem;
-  gap: 0.75rem;
-}
-
-.design-nav-overlay .logo-mark {
-  width: 36px;
-  height: 36px;
-}
-
-.design-nav-overlay .logo-name {
-  font-size: 1.15rem;
-}
-
-.design-nav-overlay .logo-tagline {
-  font-size: 0.5rem;
-}
-
-.design-nav-overlay .nav-link,
-.design-nav-overlay .nav-dropdown-btn {
-  font-size: 0.72rem;
-}
-
-.design-nav-overlay .header-phone-number {
-  font-size: 0.95rem;
-}
-
-.design-nav-overlay .header-phone-label {
-  font-size: 0.55rem;
-}
-
-.design-nav-overlay .dropdown {
-  z-index: 30;
-}
-
-.design-nav-overlay .has-dropdown.open .dropdown,
-.design-nav-overlay .has-dropdown:focus-within .dropdown {
-  z-index: 30;
-}
-
-.design-image {
+.home-hero-img {
   width: 100%;
   height: auto;
   display: block;
-  filter: brightness(1.12) contrast(1.04) saturate(1.06);
+  filter: brightness(1.1) contrast(1.03) saturate(1.05);
 }
 
 .design-hit {
@@ -328,13 +272,86 @@ a {
 }
 
 .design-hit:hover {
-  background: rgba(255, 196, 0, 0.12);
+  background: rgba(255, 196, 0, 0.1);
 }
 
-/* Click zones on mockup — phone & CTA buttons only (nav is real HTML above) */
-.design-hit-call-btn { top: 52%; left: 3%; width: 30%; height: 11%; }
-.design-hit-request { top: 52%; left: 34%; width: 34%; height: 11%; }
-.design-hit-footer-phone { bottom: 2%; left: 1%; width: 38%; height: 14%; }
+/* Tap zones on hero.png (1024×682) */
+.hit-logo { top: 1%; left: 1%; width: 22%; height: 11%; }
+.hit-home { top: 4%; left: 27%; width: 7%; height: 7%; }
+.hit-towing { top: 4%; left: 34%; width: 9%; height: 7%; }
+.hit-automotive { top: 4%; left: 43%; width: 11%; height: 7%; }
+.hit-about { top: 4%; left: 54%; width: 8%; height: 7%; }
+.hit-contact { top: 4%; left: 62%; width: 10%; height: 7%; }
+.hit-header-phone { top: 2%; right: 1%; left: auto; width: 28%; height: 10%; }
+.hit-call-btn { top: 52%; left: 3%; width: 30%; height: 11%; }
+.hit-request { top: 52%; left: 34%; width: 34%; height: 11%; }
+.hit-footer-phone { bottom: 2%; left: 1%; width: 38%; height: 14%; }
+
+/* Section below hero — fills phone/laptop without stretching the image */
+.below-hero {
+  background: #111;
+  border-top: 4px solid var(--yellow);
+  padding: 1.75rem 1.25rem 2rem;
+}
+
+.below-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.below-hero-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.quick-link {
+  display: block;
+  padding: 0.85rem 0.5rem;
+  background: #1a1a1a;
+  border-left: 3px solid var(--red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+
+.quick-link:hover {
+  border-left-color: var(--yellow);
+  background: #222;
+}
+
+.below-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.below-hero-note {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 700px) {
+  .quick-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 /* 24/7 emphasis — sits right under your design (matches red footer in mockup) */
 .emergency-strip {
