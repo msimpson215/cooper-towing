@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -16,7 +17,84 @@
   <main id="main">
     <h1 class="sr-only">Cooper's Automotive and Towing — 24/7 towing Metro East and St. Louis.</h1>
 
-    <section class="design-panel" aria-label="Cooper's Automotive and Towing">
+    <!-- Phone layout: big text, no tiny mockup image -->
+    <div class="mobile-home mobile-only">
+      <header class="mobile-header">
+        <div class="mobile-header-top">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="sr-only">Menu</span>
+          </button>
+          <a href="/" class="mobile-logo">
+            <span class="logo-name">Cooper's</span>
+            <span class="logo-tagline">AUTOMOTIVE &amp; TOWING</span>
+          </a>
+        </div>
+        <a href="tel:6186718770" class="mobile-call-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          CALL NOW 618-671-8770
+        </a>
+        <nav id="mobile-nav" class="site-nav" aria-label="Main">
+          <ul class="nav-list">
+            <li><a href="/" class="nav-link active">HOME</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-link nav-dropdown-btn" aria-expanded="false">TOWING</button>
+              <ul class="dropdown">
+                <li><a href="/towing/">All Towing Services</a></li>
+                <li><a href="/towing/emergency.html">Emergency Towing 24/7</a></li>
+                <li><a href="/towing/flatbed.html">Flatbed Towing</a></li>
+                <li><a href="/towing/roadside.html">Roadside Assistance</a></li>
+                <li><a href="/towing/accident-recovery.html">Accident Recovery</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-link nav-dropdown-btn" aria-expanded="false">AUTOMOTIVE</button>
+              <ul class="dropdown">
+                <li><a href="/automotive/">All Automotive</a></li>
+                <li><a href="/automotive/repairs.html">General Repairs</a></li>
+                <li><a href="/automotive/diagnostics.html">Diagnostics</a></li>
+                <li><a href="/automotive/brakes.html">Brakes &amp; Suspension</a></li>
+                <li><a href="/automotive/maintenance.html">Oil &amp; Maintenance</a></li>
+              </ul>
+            </li>
+            <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+            <li><a href="/contact.html" class="nav-link">CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="mobile-hero">
+        <div class="mobile-hero-bg" aria-hidden="true"></div>
+        <div class="mobile-hero-shade" aria-hidden="true"></div>
+        <div class="mobile-hero-content">
+          <p class="mobile-hero-kicker">24/7 EMERGENCY · ON-CALL SERVICE</p>
+          <span class="hero-line hero-line-white">STRANDED?</span>
+          <span class="hero-line hero-line-yellow">WE'RE ON THE WAY.</span>
+          <p class="mobile-hero-sub">Fast, reliable towing and automotive service throughout Metro East &amp; St. Louis.</p>
+          <p class="mobile-hero-tag">ONE CALL. WE'LL TAKE CARE OF THE REST.</p>
+          <div class="mobile-hero-actions">
+            <a href="tel:6186718770" class="btn btn-call btn-large">CALL NOW 618-671-8770</a>
+            <button type="button" class="btn btn-service btn-large" data-open-modal="service">REQUEST SERVICE</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="mobile-service-area">
+        <h2>PROUDLY SERVING METRO EAST &amp; GREATER ST. LOUIS</h2>
+        <p>Belleville · Fairview Heights · Collinsville · O'Fallon · East St. Louis · St. Louis &amp; surrounding areas</p>
+      </div>
+
+      <div class="mobile-features">
+        <div class="mobile-feature"><strong>EMERGENCY TOWING</strong><span>24/7 response</span></div>
+        <div class="mobile-feature"><strong>ROADSIDE HELP</strong><span>Jump starts, lockouts &amp; more</span></div>
+        <div class="mobile-feature"><strong>LOCAL &amp; TRUSTED</strong><span>Serving our community</span></div>
+        <div class="mobile-feature"><strong>FAST DISPATCH</strong><span>Back on the road</span></div>
+      </div>
+    </div>
+
+    <section class="design-panel desktop-only" aria-label="Cooper's Automotive and Towing">
       <div class="design-panel-frame">
         <header class="design-nav-overlay site-header">
           <div class="header-inner">
@@ -36,7 +114,7 @@
               <span class="nav-toggle-bar"></span>
               <span class="sr-only">Menu</span>
             </button>
-            <nav id="site-nav" class="site-nav" aria-label="Main">
+            <nav id="site-nav" class="site-nav desktop-nav" aria-label="Main">
               <ul class="nav-list">
                 <li><a href="/" class="nav-link active">HOME</a></li>
                 <li class="has-dropdown">

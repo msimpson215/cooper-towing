@@ -1,0 +1,314 @@
+/* Phones & small tablets — laptop keeps full design image (style.css) */
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mobile-home {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* —— Header —— */
+  .mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 3px solid var(--yellow);
+  }
+
+  .mobile-header-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .mobile-header .nav-toggle {
+    display: flex;
+    flex-shrink: 0;
+    order: 1;
+  }
+
+  .mobile-logo {
+    flex: 1;
+    min-width: 0;
+    order: 2;
+  }
+
+  .mobile-logo .logo-name {
+    display: block;
+    font-family: var(--script);
+    font-size: 1.65rem;
+    color: var(--yellow);
+    line-height: 1.15;
+  }
+
+  .mobile-logo .logo-tagline {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--white);
+    margin-top: 0.1rem;
+  }
+
+  .mobile-call-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--red);
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 1rem;
+    border-top: 2px solid #9a181c;
+  }
+
+  .mobile-call-bar svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  .mobile-header .site-nav {
+    display: none;
+    background: #111;
+    border-top: 1px solid #333;
+  }
+
+  .mobile-header .site-nav.open {
+    display: block;
+  }
+
+  .mobile-header .nav-list {
+    flex-direction: column;
+    padding: 0.5rem 0;
+    gap: 0;
+  }
+
+  .mobile-header .nav-list > li {
+    border-bottom: 1px solid #222;
+  }
+
+  .mobile-header .nav-link,
+  .mobile-header .nav-dropdown-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .mobile-header .dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    background: #0a0a0a;
+    border: none;
+    padding: 0 0 0.5rem;
+  }
+
+  .mobile-header .has-dropdown.open .dropdown {
+    display: block;
+  }
+
+  .mobile-header .dropdown a {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* —— Hero —— */
+  .mobile-hero {
+    position: relative;
+    min-height: 52vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .mobile-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("../images/hero.png") center 28% / cover no-repeat;
+    filter: brightness(1.08) saturate(1.05);
+  }
+
+  .mobile-hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.75) 55%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  }
+
+  .mobile-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 1.25rem 1rem 1.5rem;
+    width: 100%;
+  }
+
+  .mobile-hero-kicker {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--yellow);
+    text-transform: uppercase;
+  }
+
+  .mobile-hero-content .hero-line {
+    display: block;
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-hero-content .hero-line-white {
+    color: var(--white);
+  }
+
+  .mobile-hero-content .hero-line-yellow {
+    color: var(--yellow);
+  }
+
+  .mobile-hero-sub {
+    margin: 0.75rem 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #eee;
+  }
+
+  .mobile-hero-tag {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--yellow);
+    text-transform: uppercase;
+  }
+
+  .mobile-hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .btn-large {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* —— Yellow service bar —— */
+  .mobile-service-area {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 1rem;
+  }
+
+  .mobile-service-area h2 {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+  }
+
+  .mobile-service-area p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* —— Feature chips —— */
+  .mobile-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    padding: 1rem;
+    background: var(--black);
+  }
+
+  .mobile-feature {
+    background: #141414;
+    border-left: 3px solid var(--yellow);
+    padding: 0.75rem;
+  }
+
+  .mobile-feature strong {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--yellow);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.2rem;
+  }
+
+  .mobile-feature span {
+    font-size: 0.68rem;
+    color: #ccc;
+    line-height: 1.35;
+  }
+
+  #main .emergency-strip {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+
+  #main .footer-copy {
+    flex-shrink: 0;
+    padding: 1rem 1rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .emergency-badge {
+    font-size: 1.05rem;
+  }
+
+  .emergency-phone {
+    font-size: 2rem;
+  }
+}

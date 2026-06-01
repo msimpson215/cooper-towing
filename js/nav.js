@@ -1,10 +1,12 @@
 (function () {
-  const navToggle = document.querySelector(".nav-toggle");
-  const siteNav = document.getElementById("site-nav");
+  document.querySelectorAll(".nav-toggle").forEach((navToggle) => {
+    const navId = navToggle.getAttribute("aria-controls");
+    const siteNav = navId ? document.getElementById(navId) : null;
 
-  navToggle?.addEventListener("click", () => {
-    const open = siteNav?.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(!!open));
+    navToggle.addEventListener("click", () => {
+      const open = siteNav?.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(!!open));
+    });
   });
 
   document.querySelectorAll(".nav-dropdown-btn").forEach((btn) => {
