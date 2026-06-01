@@ -1,4 +1,4 @@
-/* Phones — show YOUR design image only (words stay on the photo, not duplicated in HTML) */
+/* Phone: only your design image + invisible taps (no HTML nav bar) */
 
 .desktop-only {
   display: block;
@@ -17,180 +17,61 @@
     display: block;
   }
 
-  body {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-  }
-
+  body,
   #main {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    min-height: 0;
+    display: block;
   }
 
   .mobile-home {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    display: block;
     background: var(--black);
   }
 
-  /* —— Header (menu + tap-to-call only — not marketing copy) —— */
-  .mobile-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--black);
-    border-bottom: 3px solid var(--yellow);
-    flex-shrink: 0;
-  }
-
-  .mobile-header-top {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 1rem;
-  }
-
-  .mobile-header .nav-toggle {
-    display: flex;
-    flex-shrink: 0;
-  }
-
-  .mobile-logo {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .mobile-logo .logo-name {
-    display: block;
-    font-family: var(--script);
-    font-size: 1.5rem;
-    color: var(--yellow);
-    line-height: 1.15;
-  }
-
-  .mobile-logo .logo-tagline {
-    display: block;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--white);
-  }
-
-  .mobile-call-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--red);
-    color: var(--white);
-    font-size: 1.1rem;
-    font-weight: 800;
-    padding: 0.8rem 1rem;
-  }
-
-  .mobile-call-bar svg {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-  }
-
-  .mobile-header .site-nav {
-    display: none;
-    background: #111;
-    border-top: 1px solid #333;
-  }
-
-  .mobile-header .site-nav.open {
-    display: block;
-  }
-
-  .mobile-header .nav-list {
-    flex-direction: column;
-    padding: 0.5rem 0;
-    gap: 0;
-  }
-
-  .mobile-header .nav-list > li {
-    border-bottom: 1px solid #222;
-  }
-
-  .mobile-header .nav-link,
-  .mobile-header .nav-dropdown-btn {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 0.85rem 1rem;
-    font-size: 0.95rem;
-    font-weight: 700;
-  }
-
-  .mobile-header .dropdown {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    display: none;
-    background: #0a0a0a;
-    border: none;
-  }
-
-  .mobile-header .has-dropdown.open .dropdown {
-    display: block;
-  }
-
-  .mobile-header .dropdown a {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.9rem;
-  }
-
-  /* —— Your full design image — no HTML text on top —— */
   .mobile-design-wrap {
     position: relative;
     line-height: 0;
-    flex: 1 0 auto;
+    width: 100%;
   }
 
   .mobile-design-img {
     width: 100%;
     height: auto;
     display: block;
+    vertical-align: top;
     filter: brightness(1.1) contrast(1.03) saturate(1.05);
   }
 
   .mobile-design-wrap .design-hit {
     position: absolute;
     z-index: 2;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
   }
 
-  .mobile-hit-call {
-    top: 52%;
-    left: 2%;
-    width: 46%;
-    height: 10%;
+  .mobile-design-wrap .design-hit:active {
+    background: rgba(255, 196, 0, 0.15);
   }
 
-  .mobile-hit-request {
-    top: 52%;
-    left: 50%;
-    width: 48%;
-    height: 10%;
-  }
+  /* Nav & logo baked into hero.png (1024×682) */
+  .mobile-hit-logo { top: 1%; left: 1%; width: 22%; height: 11%; }
+  .mobile-hit-home { top: 4%; left: 27%; width: 7%; height: 7%; }
+  .mobile-hit-towing { top: 4%; left: 34%; width: 9%; height: 7%; }
+  .mobile-hit-automotive { top: 4%; left: 43%; width: 11%; height: 7%; }
+  .mobile-hit-about { top: 4%; left: 54%; width: 8%; height: 7%; }
+  .mobile-hit-contact { top: 4%; left: 62%; width: 10%; height: 7%; }
+  .mobile-hit-header-phone { top: 2%; right: 1%; width: 28%; height: 10%; }
 
-  .mobile-hit-footer {
-    bottom: 1%;
-    left: 0;
-    width: 100%;
-    height: 11%;
-  }
+  /* Buttons in image */
+  .mobile-hit-call { top: 52%; left: 2%; width: 46%; height: 10%; }
+  .mobile-hit-request { top: 52%; left: 50%; width: 48%; height: 10%; }
+  .mobile-hit-footer { bottom: 1%; left: 0; width: 100%; height: 11%; }
 
-  #main .footer-copy {
-    flex-shrink: 0;
-    padding: 0.75rem 1rem 1.25rem;
-    font-size: 0.75rem;
+  #main > .footer-copy {
+    margin: 0;
+    padding: 0.5rem 1rem 1rem;
   }
 }
