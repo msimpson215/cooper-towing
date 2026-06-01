@@ -278,6 +278,72 @@ a {
 .design-hit-request { top: 52%; left: 34%; width: 34%; height: 11%; }
 .design-hit-footer-phone { bottom: 2%; left: 1%; width: 38%; height: 14%; }
 
+/* 24/7 emphasis — sits right under your design (matches red footer in mockup) */
+.emergency-strip {
+  background: var(--red);
+  border-top: 4px solid var(--yellow);
+  border-bottom: 4px solid var(--yellow);
+}
+
+.emergency-strip-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.emergency-badge {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+
+.emergency-tagline {
+  margin: 0 0 0.75rem;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.emergency-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.emergency-phone svg {
+  width: clamp(32px, 8vw, 44px);
+  height: clamp(32px, 8vw, 44px);
+  fill: var(--white);
+  flex-shrink: 0;
+}
+
+.emergency-phone:hover {
+  color: var(--yellow);
+}
+
+.emergency-phone:hover svg {
+  fill: var(--yellow);
+}
+
+.emergency-sub {
+  margin: 0.65rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .footer-copy {
   text-align: center;
   font-size: 0.7rem;
