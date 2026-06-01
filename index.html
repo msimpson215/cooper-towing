@@ -17,7 +17,7 @@
   <main id="main">
     <h1 class="sr-only">Cooper's Automotive and Towing — 24/7 towing Metro East and St. Louis.</h1>
 
-    <!-- Phone layout: big text, no tiny mockup image -->
+    <!-- Phone: your picture only — no duplicate words on top (nav + call bar are for tapping) -->
     <div class="mobile-home mobile-only">
       <header class="mobile-header">
         <div class="mobile-header-top">
@@ -65,32 +65,17 @@
         </nav>
       </header>
 
-      <section class="mobile-hero">
-        <div class="mobile-hero-bg" aria-hidden="true"></div>
-        <div class="mobile-hero-shade" aria-hidden="true"></div>
-        <div class="mobile-hero-content">
-          <p class="mobile-hero-kicker">24/7 EMERGENCY · ON-CALL SERVICE</p>
-          <span class="hero-line hero-line-white">STRANDED?</span>
-          <span class="hero-line hero-line-yellow">WE'RE ON THE WAY.</span>
-          <p class="mobile-hero-sub">Fast, reliable towing and automotive service throughout Metro East &amp; St. Louis.</p>
-          <p class="mobile-hero-tag">ONE CALL. WE'LL TAKE CARE OF THE REST.</p>
-          <div class="mobile-hero-actions">
-            <a href="tel:6186718770" class="btn btn-call btn-large">CALL NOW 618-671-8770</a>
-            <button type="button" class="btn btn-service btn-large" data-open-modal="service">REQUEST SERVICE</button>
-          </div>
-        </div>
-      </section>
-
-      <div class="mobile-service-area">
-        <h2>PROUDLY SERVING METRO EAST &amp; GREATER ST. LOUIS</h2>
-        <p>Belleville · Fairview Heights · Collinsville · O'Fallon · East St. Louis · St. Louis &amp; surrounding areas</p>
-      </div>
-
-      <div class="mobile-features">
-        <div class="mobile-feature"><strong>EMERGENCY TOWING</strong><span>24/7 response</span></div>
-        <div class="mobile-feature"><strong>ROADSIDE HELP</strong><span>Jump starts, lockouts &amp; more</span></div>
-        <div class="mobile-feature"><strong>LOCAL &amp; TRUSTED</strong><span>Serving our community</span></div>
-        <div class="mobile-feature"><strong>FAST DISPATCH</strong><span>Back on the road</span></div>
+      <div class="mobile-design-wrap">
+        <img
+          class="mobile-design-img"
+          src="images/hero.png"
+          width="1024"
+          height="682"
+          alt="Cooper's Automotive and Towing — Stranded? We're on the way. Call 618-671-8770."
+        >
+        <a href="tel:6186718770" class="design-hit mobile-hit-call" aria-label="Call now"> </a>
+        <button type="button" class="design-hit mobile-hit-request" data-open-modal="service" aria-label="Request service"> </button>
+        <a href="tel:6186718770" class="design-hit mobile-hit-footer" aria-label="Call 618-671-8770"> </a>
       </div>
     </div>
 
@@ -165,7 +150,7 @@
       </div>
     </section>
 
-    <section class="emergency-strip" aria-label="24/7 emergency dispatch">
+    <section class="emergency-strip desktop-only" aria-label="24/7 emergency dispatch">
       <div class="emergency-strip-inner">
         <p class="emergency-badge">24/7 EMERGENCY · ON-CALL SERVICE</p>
         <p class="emergency-tagline">ONE CALL. WE'LL TAKE CARE OF THE REST.</p>

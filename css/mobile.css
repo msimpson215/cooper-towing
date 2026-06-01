@@ -1,4 +1,4 @@
-/* Phones & small tablets — laptop keeps full design image (style.css) */
+/* Phones — show YOUR design image only (words stay on the photo, not duplicated in HTML) */
 
 .desktop-only {
   display: block;
@@ -35,15 +35,17 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    background: var(--black);
   }
 
-  /* —— Header —— */
+  /* —— Header (menu + tap-to-call only — not marketing copy) —— */
   .mobile-header {
     position: sticky;
     top: 0;
     z-index: 100;
     background: var(--black);
     border-bottom: 3px solid var(--yellow);
+    flex-shrink: 0;
   }
 
   .mobile-header-top {
@@ -56,30 +58,27 @@
   .mobile-header .nav-toggle {
     display: flex;
     flex-shrink: 0;
-    order: 1;
   }
 
   .mobile-logo {
     flex: 1;
     min-width: 0;
-    order: 2;
   }
 
   .mobile-logo .logo-name {
     display: block;
     font-family: var(--script);
-    font-size: 1.65rem;
+    font-size: 1.5rem;
     color: var(--yellow);
     line-height: 1.15;
   }
 
   .mobile-logo .logo-tagline {
     display: block;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     color: var(--white);
-    margin-top: 0.1rem;
   }
 
   .mobile-call-bar {
@@ -89,18 +88,15 @@
     gap: 0.5rem;
     background: var(--red);
     color: var(--white);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
-    padding: 0.85rem 1rem;
-    border-top: 2px solid #9a181c;
+    padding: 0.8rem 1rem;
   }
 
   .mobile-call-bar svg {
     width: 22px;
     height: 22px;
     fill: currentColor;
-    flex-shrink: 0;
   }
 
   .mobile-header .site-nav {
@@ -141,7 +137,6 @@
     display: none;
     background: #0a0a0a;
     border: none;
-    padding: 0 0 0.5rem;
   }
 
   .mobile-header .has-dropdown.open .dropdown {
@@ -153,162 +148,49 @@
     font-size: 0.9rem;
   }
 
-  /* —— Hero —— */
-  .mobile-hero {
+  /* —— Your full design image — no HTML text on top —— */
+  .mobile-design-wrap {
     position: relative;
-    min-height: 52vh;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
+    line-height: 0;
+    flex: 1 0 auto;
   }
 
-  .mobile-hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url("../images/hero.png") center 28% / cover no-repeat;
-    filter: brightness(1.08) saturate(1.05);
-  }
-
-  .mobile-hero-shade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 0.75) 55%,
-      rgba(0, 0, 0, 0.92) 100%
-    );
-  }
-
-  .mobile-hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 1.25rem 1rem 1.5rem;
+  .mobile-design-img {
     width: 100%;
-  }
-
-  .mobile-hero-kicker {
-    margin: 0 0 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: var(--yellow);
-    text-transform: uppercase;
-  }
-
-  .mobile-hero-content .hero-line {
+    height: auto;
     display: block;
-    font-size: clamp(2rem, 9vw, 2.75rem);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: 0.02em;
+    filter: brightness(1.1) contrast(1.03) saturate(1.05);
   }
 
-  .mobile-hero-content .hero-line-white {
-    color: var(--white);
+  .mobile-design-wrap .design-hit {
+    position: absolute;
+    z-index: 2;
   }
 
-  .mobile-hero-content .hero-line-yellow {
-    color: var(--yellow);
+  .mobile-hit-call {
+    top: 52%;
+    left: 2%;
+    width: 46%;
+    height: 10%;
   }
 
-  .mobile-hero-sub {
-    margin: 0.75rem 0 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.45;
-    color: #eee;
+  .mobile-hit-request {
+    top: 52%;
+    left: 50%;
+    width: 48%;
+    height: 10%;
   }
 
-  .mobile-hero-tag {
-    margin: 0 0 1rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--yellow);
-    text-transform: uppercase;
-  }
-
-  .mobile-hero-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  .btn-large {
+  .mobile-hit-footer {
+    bottom: 1%;
+    left: 0;
     width: 100%;
-    justify-content: center;
-    padding: 1rem 1.25rem;
-    font-size: 0.95rem;
-  }
-
-  /* —— Yellow service bar —— */
-  .mobile-service-area {
-    background: var(--yellow);
-    color: var(--black);
-    padding: 1rem;
-  }
-
-  .mobile-service-area h2 {
-    margin: 0 0 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    line-height: 1.35;
-  }
-
-  .mobile-service-area p {
-    margin: 0;
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
-  /* —— Feature chips —— */
-  .mobile-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.65rem;
-    padding: 1rem;
-    background: var(--black);
-  }
-
-  .mobile-feature {
-    background: #141414;
-    border-left: 3px solid var(--yellow);
-    padding: 0.75rem;
-  }
-
-  .mobile-feature strong {
-    display: block;
-    font-size: 0.72rem;
-    color: var(--yellow);
-    letter-spacing: 0.04em;
-    margin-bottom: 0.2rem;
-  }
-
-  .mobile-feature span {
-    font-size: 0.68rem;
-    color: #ccc;
-    line-height: 1.35;
-  }
-
-  #main .emergency-strip {
-    margin-top: auto;
-    flex-shrink: 0;
+    height: 11%;
   }
 
   #main .footer-copy {
     flex-shrink: 0;
-    padding: 1rem 1rem 1.25rem;
+    padding: 0.75rem 1rem 1.25rem;
     font-size: 0.75rem;
-  }
-
-  .emergency-badge {
-    font-size: 1.05rem;
-  }
-
-  .emergency-phone {
-    font-size: 2rem;
   }
 }
