@@ -401,3 +401,31 @@
   font-weight: 700;
   color: var(--yellow);
 }
+
+.service-path-panel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.service-path-panel h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: var(--yellow);
+}
+
+.service-path-panel p {
+  margin: 0 0 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.service-path-repair {
+  border-left: 4px solid var(--yellow);
+  background: #141414;
+}
+
+.service-path-tow {
+  border-left: 4px solid var(--red);
+  background: #141414;
+}
