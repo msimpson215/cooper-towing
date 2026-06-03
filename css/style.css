@@ -288,46 +288,77 @@ a {
 .hit-footer-phone { bottom: 2%; left: 1%; width: 38%; height: 14%; }
 
 /* Section below hero — fills phone/laptop without stretching the image */
-/* Home: towing + repair side by side (diagonal split) */
+/* Home: 45° split — towing upper-left, larger; repair lower-right */
 .dual-services {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 58fr 42fr;
   max-width: 1280px;
   margin: 0 auto;
-  min-height: 200px;
+  min-height: 240px;
   position: relative;
   overflow: hidden;
+  background: #1a1a1a;
 }
 
 .dual-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 1.5rem;
-  min-height: 200px;
+  padding: 2rem 1.75rem;
+  min-height: 240px;
   position: relative;
   transition: filter 0.2s;
-}
-
-.dual-panel:hover {
-  filter: brightness(1.08);
 }
 
 .dual-towing {
   background: var(--red);
   color: var(--white);
-  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
-  padding-right: 2.5rem;
-  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
+  padding-right: 3rem;
+  z-index: 2;
 }
 
 .dual-repair {
-  background: #1a1a1a;
+  background: #141414;
   color: var(--white);
-  margin-left: -8%;
-  padding-left: 2.5rem;
+  margin-left: -12%;
+  padding-left: 3rem;
+  padding-top: 2.5rem;
+  align-self: stretch;
   border-top: 4px solid var(--yellow);
   border-bottom: 4px solid var(--yellow);
+  z-index: 1;
+}
+
+.dual-towing .dual-title {
+  font-size: clamp(2rem, 5.5vw, 2.75rem);
+}
+
+.dual-repair .dual-title {
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+}
+
+.home-both-line {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ccc;
+  line-height: 1.55;
+  background: #0d0d0d;
+  border-bottom: 1px solid #222;
+}
+
+.home-both-line em {
+  color: var(--yellow);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.dual-panel:hover {
+  filter: brightness(1.08);
 }
 
 .dual-label {
@@ -338,16 +369,12 @@ a {
   opacity: 0.9;
 }
 
-.dual-towing .dual-label {
-  color: var(--yellow);
-}
-
+.dual-towing .dual-label,
 .dual-repair .dual-label {
   color: var(--yellow);
 }
 
 .dual-title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 800;
   letter-spacing: 0.06em;
   margin: 0.25rem 0;
@@ -358,7 +385,7 @@ a {
   font-size: 0.85rem;
   font-weight: 600;
   line-height: 1.4;
-  max-width: 280px;
+  max-width: 300px;
   opacity: 0.95;
 }
 
@@ -381,11 +408,18 @@ a {
   .dual-towing {
     clip-path: none;
     padding-right: 1.5rem;
+    min-height: 200px;
   }
 
   .dual-repair {
     margin-left: 0;
     padding-left: 1.5rem;
+    padding-top: 1.75rem;
+    min-height: 180px;
+  }
+
+  .dual-repair .dual-title {
+    font-size: clamp(1.5rem, 6vw, 1.85rem);
   }
 }
 
