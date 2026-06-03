@@ -287,17 +287,93 @@ a {
 .hit-request { top: 52%; left: 34%; width: 34%; height: 11%; }
 .hit-footer-phone { bottom: 2%; left: 1%; width: 38%; height: 14%; }
 
-/* Section below hero — fills phone/laptop without stretching the image */
-/* Home: 45° split — towing upper-left, larger; repair lower-right */
+/* Section below hero — equal towing + repair */
+@keyframes pulse-red-glow {
+  0%, 100% {
+    color: #fff;
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    color: #ffcccc;
+    text-shadow: 0 0 14px rgba(255, 60, 60, 0.85);
+  }
+}
+
+.pulse-red {
+  animation: pulse-red-glow 2.2s ease-in-out infinite;
+  font-weight: 800;
+}
+
+.home-dispatch-bar {
+  background: var(--black);
+  border-top: 4px solid var(--yellow);
+  border-bottom: 4px solid var(--red);
+  padding: 1rem 1.25rem 1.1rem;
+  text-align: center;
+}
+
+.home-dispatch-phone {
+  display: block;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.home-dispatch-phone:hover {
+  color: var(--yellow);
+}
+
+.home-dispatch-services {
+  margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-dispatch-dot {
+  color: var(--yellow);
+  margin: 0 0.35rem;
+}
+
+.home-dispatch-area {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--yellow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-twin-msg {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.twin-line {
+  margin: 0 0 0.65rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-weight: 700;
+  color: #eee;
+  line-height: 1.45;
+}
+
+.twin-line:last-child {
+  margin-bottom: 0;
+}
+
 .dual-services {
   display: grid;
-  grid-template-columns: 58fr 42fr;
+  grid-template-columns: 1fr 1fr;
   max-width: 1280px;
   margin: 0 auto;
-  min-height: 240px;
+  min-height: 220px;
   position: relative;
   overflow: hidden;
-  background: #1a1a1a;
+  background: var(--red);
 }
 
 .dual-panel {
@@ -305,37 +381,33 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 2rem 1.75rem;
-  min-height: 240px;
+  min-height: 220px;
   position: relative;
   transition: filter 0.2s;
+  background: var(--red);
+  color: var(--white);
 }
 
 .dual-towing {
-  background: var(--red);
-  color: var(--white);
-  clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
-  padding-right: 3rem;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+  padding-right: 2rem;
   z-index: 2;
 }
 
 .dual-repair {
-  background: #141414;
-  color: var(--white);
-  margin-left: -12%;
-  padding-left: 3rem;
-  padding-top: 2.5rem;
-  align-self: stretch;
-  border-top: 4px solid var(--yellow);
-  border-bottom: 4px solid var(--yellow);
+  clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%);
+  margin-left: -6%;
+  padding-left: 2.25rem;
   z-index: 1;
+  border-left: 4px solid var(--yellow);
 }
 
-.dual-towing .dual-title {
-  font-size: clamp(2rem, 5.5vw, 2.75rem);
-}
-
-.dual-repair .dual-title {
-  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+.dual-title {
+  font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0.25rem 0;
+  line-height: 1.1;
 }
 
 .home-both-line {
@@ -374,18 +446,11 @@ a {
   color: var(--yellow);
 }
 
-.dual-title {
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  margin: 0.25rem 0;
-  line-height: 1.1;
-}
-
 .dual-desc {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.4;
-  max-width: 300px;
+  max-width: 340px;
   opacity: 0.95;
 }
 
@@ -403,6 +468,7 @@ a {
 @media (max-width: 600px) {
   .dual-services {
     grid-template-columns: 1fr;
+    background: var(--black);
   }
 
   .dual-towing {
@@ -412,14 +478,12 @@ a {
   }
 
   .dual-repair {
+    clip-path: none;
     margin-left: 0;
     padding-left: 1.5rem;
-    padding-top: 1.75rem;
-    min-height: 180px;
-  }
-
-  .dual-repair .dual-title {
-    font-size: clamp(1.5rem, 6vw, 1.85rem);
+    min-height: 200px;
+    border-left: none;
+    border-top: 4px solid var(--yellow);
   }
 }
 
@@ -616,6 +680,16 @@ a {
 
 .btn-service:hover {
   background: rgba(255, 196, 0, 0.12);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Features */
