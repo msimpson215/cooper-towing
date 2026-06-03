@@ -2,7 +2,7 @@ Photos in this folder
 
 - hero.png / hero-clean.png — Cooper's design & tow truck (your artwork)
 - logo.png — Cooper's A logo for nav on inner pages (drop file here to replace placeholder SVG)
-- auto-hero.jpg — Black woman mechanic (Wikimedia Commons, CC BY-SA — replace with Cooper's team photo)
+- auto-hero.jpg — shop / repair bay (stock — replace with Cooper's real shop or team photo)
 - auto-shop.jpg — mechanic working on everyday car (stock)
 - auto-suv.jpg — SUV (stock)
 - auto-minivan.jpg — family vehicle (stock)
