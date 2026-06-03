@@ -73,17 +73,45 @@
     modalSuccess.hidden = false;
   });
 
-  document.getElementById("contact-form")?.addEventListener("submit", (e) => {
+  document.getElementById("contact-form")?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
+    const form = e.target;
+    const data = new FormData(form);
+    const name = data.get("name");
+    const phone = data.get("phone");
+    const message = data.get("message");
     const subject = encodeURIComponent("Website Contact — Cooper's Towing");
-    const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nPhone: ${data.get("phone")}\n\n${data.get("message")}`
-    );
-    const to = DISPATCH_EMAIL || "";
-    window.location.href = to
-      ? `mailto:${to}?subject=${subject}&body=${body}`
-      : `mailto:?subject=${subject}&body=${body}`;
+    const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\n\n${message}`);
+
+    if (DISPATCH_EMAIL) {
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${DISPATCH_EMAIL}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: "Website Contact — Cooper's Towing",
+            name,
+            phone,
+            message,
+          }),
+        });
+        if (!res.ok) throw new Error("submit failed");
+      } catch {
+        window.location.href = `mailto:${DISPATCH_EMAIL}?subject=${subject}&body=${body}`;
+        return;
+      }
+    } else {
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+      return;
+    }
+
+    form.reset();
+    const note = form.querySelector(".form-sent-note");
+    if (note) {
+      note.hidden = false;
+    } else {
+      alert("Message sent. For emergencies call 618-671-8770.");
+    }
   });
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {

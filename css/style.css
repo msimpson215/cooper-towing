@@ -821,6 +821,16 @@ a {
   border-radius: 3px;
 }
 
+.form-sent-note {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem;
+  background: #1a2a1a;
+  border-left: 4px solid var(--yellow);
+  color: #ddd;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 .honey {
   display: none;
 }
