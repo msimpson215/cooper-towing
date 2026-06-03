@@ -128,3 +128,259 @@
 .phone-inline:hover {
   text-decoration: underline;
 }
+
+.landing-wide {
+  max-width: 960px;
+}
+
+/* Automotive landing */
+.auto-hero {
+  display: grid;
+  background: var(--black);
+  border-bottom: 4px solid var(--yellow);
+}
+
+@media (min-width: 800px) {
+  .auto-hero {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+.auto-hero-img-wrap {
+  overflow: hidden;
+  min-height: 240px;
+}
+
+.auto-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.auto-hero-copy {
+  padding: 2rem 1.25rem;
+}
+
+.auto-hero-kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+
+.auto-hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.auto-hero-lead {
+  margin: 0 0 1.25rem;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 520px;
+}
+
+.tow-bridge {
+  background: #141414;
+  border-bottom: 1px solid #333;
+  padding: 2rem 1.25rem;
+}
+
+.tow-bridge-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 700px) {
+  .tow-bridge-inner {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.tow-bridge h2 {
+  margin: 0 0 0.75rem;
+  color: var(--yellow);
+  font-size: 1.25rem;
+}
+
+.tow-bridge p {
+  margin: 0 0 0.75rem;
+  color: #ccc;
+  line-height: 1.55;
+}
+
+.tow-bridge-compact {
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--yellow);
+}
+
+.tow-bridge-compact p {
+  margin: 0;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.tow-bridge-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 2px solid #333;
+}
+
+.trust-bar {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+  .trust-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.trust-item {
+  background: #161616;
+  border-left: 3px solid var(--red);
+  padding: 1rem;
+}
+
+.trust-item strong {
+  display: block;
+  color: var(--yellow);
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.trust-item span {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.vehicle-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.vehicle-list li {
+  background: #1a1a1a;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--white);
+  border: 1px solid #333;
+}
+
+.service-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.service-block {
+  background: #161616;
+  border: 1px solid #333;
+  padding: 1.25rem;
+}
+
+.service-block h3 {
+  margin: 0 0 0.5rem;
+  color: var(--yellow);
+  font-size: 1rem;
+}
+
+.service-block p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.service-block-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.03em;
+}
+
+.service-block-link:hover {
+  color: var(--yellow);
+}
+
+.integrity-block {
+  background: #141414;
+  border: 1px solid #333;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.photo-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+  .photo-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.photo-row figure {
+  margin: 0;
+}
+
+.photo-row img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+}
+
+.photo-row figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--yellow);
+  text-align: center;
+}
+
+.makes-block {
+  margin-bottom: 1rem;
+}
+
+.makes-tags {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.makes-note {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
