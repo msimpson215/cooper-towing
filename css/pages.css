@@ -384,3 +384,20 @@
   color: #888;
   font-style: italic;
 }
+
+.page-photo {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 0 1.25rem;
+  border: 1px solid #333;
+}
+
+.subpage-back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
