@@ -4,6 +4,7 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 
 const nav = (active) => `<header class="site-header">
+  <a class="il-call" href="tel:3143561142">Illinois customers · Call 314-356-1142</a>
   <div class="header-inner">
     <a href="/" class="logo" aria-label="Home">
       <img src="/images/logo.png" alt="" class="logo-mark logo-mark-crop" width="52" height="44">
